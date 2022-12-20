@@ -13,9 +13,11 @@ class CreateShapleyProvTables extends Migration
      */
     public function up()
     {
-        Schema::create('shapley_prov_tables', function (Blueprint $table) {
+        Schema::create('shapley_prov', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('id_prov')->nullable();
+            $table->string('plot')->nullable();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateShapleyProvTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shapley_prov_tables');
+        Schema::dropIfExists('shapley_prov');
     }
 }

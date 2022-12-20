@@ -13,8 +13,10 @@ class CreateMProvTables extends Migration
      */
     public function up()
     {
-        Schema::create('m_prov_tables', function (Blueprint $table) {
+        Schema::create('m_prov', function (Blueprint $table) {
             $table->id();
+            $table->string('id_prov')->unique();
+            $table->string('nama_prov');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateMProvTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_prov_tables');
+        Schema::dropIfExists('m_prov');
     }
 }

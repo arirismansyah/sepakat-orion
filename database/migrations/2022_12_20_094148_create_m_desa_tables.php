@@ -13,9 +13,13 @@ class CreateMDesaTables extends Migration
      */
     public function up()
     {
-        Schema::create('m_desa_tables', function (Blueprint $table) {
+        Schema::create('m_desa', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('id_prov');
+            $table->string('id_kab');
+            $table->string('id_kec');
+            $table->string('id_desa');
+            $table->string('nama_desa');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateMDesaTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_desa_tables');
+        Schema::dropIfExists('m_desa');
     }
 }

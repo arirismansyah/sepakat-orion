@@ -13,9 +13,14 @@ class CreateShapleyDesaTables extends Migration
      */
     public function up()
     {
-        Schema::create('shapley_desa_tables', function (Blueprint $table) {
+        Schema::create('shapley_desa', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('id_prov')->nullable();
+            $table->string('id_kab')->nullable();
+            $table->string('id_kec')->nullable();
+            $table->string('id_desa')->nullable();
+            $table->string('plot')->nullable();
         });
     }
 
@@ -26,6 +31,6 @@ class CreateShapleyDesaTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shapley_desa_tables');
+        Schema::dropIfExists('shapley_desa');
     }
 }

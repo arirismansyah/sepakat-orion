@@ -13,9 +13,12 @@ class CreateMKecTables extends Migration
      */
     public function up()
     {
-        Schema::create('m_kec_tables', function (Blueprint $table) {
+        Schema::create('m_kec', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('id_prov');
+            $table->string('id_kab');
+            $table->string('id_kec');
+            $table->string('nama_kec');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateMKecTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_kec_tables');
+        Schema::dropIfExists('m_kec');
     }
 }

@@ -13,9 +13,11 @@ class CreateShapleyKeluargaTables extends Migration
      */
     public function up()
     {
-        Schema::create('shapley_keluarga_tables', function (Blueprint $table) {
+        Schema::create('shapley_keluarga', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('R011')->nullable();
+            $table->string('plot')->nullable();
         });
     }
 
@@ -26,6 +28,6 @@ class CreateShapleyKeluargaTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shapley_keluarga_tables');
+        Schema::dropIfExists('shapley_keluarga');
     }
 }
