@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrionKeluargaController;
+use App\Http\Controllers\OrionWilayahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/orion-wilayah', [OrionWilayahController::class, 'index'])->name('orion-wilayah');
+Route::get('/orion-keluarga', [OrionKeluargaController::class, 'index'])->name('orion-keluarga');
 
 Route::get('/', function () {
     return view('welcome');
